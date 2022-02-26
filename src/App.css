@@ -1,4 +1,13 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, purple, pink, blue );
+  height: 100vh;
+}
+
+.App h1 {
+  margin-top: 50px;
 }
 

@@ -1,0 +1,14 @@
+.ColorsList {
+    margin: 50px;
+    padding: 10px;
+    border: solid black 1px;
+    border-radius: 4px;
+    width: 30%;
+    justify-content: center;
+    background-color:antiquewhite;
+}
+
+.ColorsList-link {
+    text-decoration: none;
+    display: block;
+}

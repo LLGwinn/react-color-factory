@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Redirect, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
+import './ColorForm.css';
 
 function ColorForm( {add} ) {
     const [chosenColor, setChosenColor] = useState('#FFFFFF');
@@ -16,7 +17,7 @@ function ColorForm( {add} ) {
     }
 
     return (
-        <form>
+        <form className='ColorForm'>
             <h3>Please choose a color to add to your personal palette.</h3>
             <input type='color' 
                    name='color' 

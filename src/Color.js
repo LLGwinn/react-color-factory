@@ -1,30 +1,33 @@
 import React from 'react';
-import {useParams, Link, useHistory} from 'react-router-dom';
+import {useParams, Link, Redirect, useHistory} from 'react-router-dom';
 import './Color.css';
 
-function Color( {colors} ) {
-    const {color} = useParams();
+function Color() {
+    const { color } = useParams();
     const history = useHistory();
 
-    const isUserColor = () => {
+    const allColors = JSON.parse(localStorage.getItem('colorPalette'));
+
+    function isUserColor() {
         const testColor = `#${color}`;
-        return colors.find( (userColor) => testColor === userColor)
+        return allColors.includes(testColor);
     }
 
-    if (!isUserColor()) {
-        alert('Color shown in URL is not in your palette.')
-        history.push('/colors');
+    if (!isUserColor(color)) {
+        history.push('/colors')
     }
-    
-    return (
+
+    return ( 
         <div>
-            <h3>COLOR: #{color}</h3>
+            <h2>COLOR: #{color}</h2>
             <div className='Color-sample' style={{backgroundColor:`#${color}`}}></div>
             <Link to='/colors'>
                 <button>Main Page</button>
             </Link>
         </div>
-    )
+    ) 
+
+    
 }
 
 export default Color;
