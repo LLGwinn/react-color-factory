@@ -5,7 +5,10 @@ import ColorForm from './ColorForm';
 import Color from './Color';
 
 function Routes() {
-    const [userColors, setUserColors] = useState([]);
+    const [userColors, setUserColors] = useState([
+        localStorage.getItem('colorPalette') ?
+        JSON.parse(localStorage.getItem('colorPalette')) : []
+    ]);
 
     useEffect(
         () => localStorage.setItem("colorPalette", JSON.stringify(userColors)),
